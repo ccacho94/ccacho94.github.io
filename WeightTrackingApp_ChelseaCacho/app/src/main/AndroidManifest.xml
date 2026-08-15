@@ -12,18 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WeightTrackingApp_ChelseaCacho">
         <activity
-            android:name=".new_account"
+            android:name=".view.NewAccountActivity"
             android:exported="false"
              />
         <activity
-            android:name=".notification"
+            android:name=".view.NotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".weight_log"
+            android:name=".view.WeightLogActivity"
             android:exported="false"
              />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

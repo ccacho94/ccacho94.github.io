@@ -1,4 +1,4 @@
-package com.example.weighttrackingapp_chelseacacho;
+package com.example.weighttrackingapp_chelseacacho.view;
 
 import android.Manifest;
 import android.content.Context;
@@ -18,7 +18,10 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-public class notification extends AppCompatActivity {
+import com.example.weighttrackingapp_chelseacacho.data.GoalPreferences;
+import com.example.weighttrackingapp_chelseacacho.R;
+
+public class NotificationActivity extends AppCompatActivity {
 
     private EditText editTextPhone;
     private Switch toggleButton;
@@ -180,7 +183,7 @@ public class notification extends AppCompatActivity {
     }
 
     private void goToWeightLog() {
-        Intent intent = new Intent(notification.this, weight_log.class);
+        Intent intent = new Intent(NotificationActivity.this, WeightLogActivity.class);
         startActivity(intent);
         finish();
     }

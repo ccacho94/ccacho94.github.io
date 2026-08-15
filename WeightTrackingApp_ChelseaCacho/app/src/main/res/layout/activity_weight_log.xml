@@ -52,6 +52,17 @@
                 android:backgroundTint="#6B8E23" />
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/tvWeightTrend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"
+            android:text="Trend: Add at least two weight entries."
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
         <!-- Add entry area -->
         <TextView
             android:layout_width="wrap_content"

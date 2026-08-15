@@ -1,4 +1,4 @@
-package com.example.weighttrackingapp_chelseacacho;
+package com.example.weighttrackingapp_chelseacacho.utility;
 
 public class GoalManager {
 
