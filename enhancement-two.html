@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhancement Two: Algorithms & Data Structures | Chelsea Cacho</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header compact">
+    <div class="container">
+      <a class="back-link" href="index.html">← Back to ePortfolio</a>
+      <p class="eyebrow">Category Two</p>
+      <h1>Enhancement Two: Algorithms & Data Structures</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container narrow">
+        <h2>Enhancement Overview</h2>
+        <p>For this enhancement, I added a weight-trend feature that analyzes a user's weight history. The enhancement focuses on organizing weight entries by date, comparing the newest records, and applying algorithms and data structures in a practical feature.</p>
+
+        <h2>Original Artifact</h2>
+        <p>The original application stored weight entries in an ArrayList and could determine whether a user reached a goal, but it did not analyze changes over time. Entries could also be ordered by entry ID instead of the actual date, which could produce incorrect results when older dates were entered later.</p>
+
+        <h2>Enhancements Completed</h2>
+        <ul class="enhancement-list">
+          <li>Used an ArrayList to store WeightEntry objects for analysis.</li>
+<li>Added MergeSort logic to organize entries chronologically.</li>
+<li>Compared the two most recent entries to identify whether weight is increasing, decreasing, or staying the same.</li>
+<li>Separated trend logic into a dedicated WeightTrendAnalyzer class.</li>
+<li>Applied binary-search concepts for locating entries by date after sorting.</li>
+<li>Evaluated runtime using Big-O notation, including O(n log n) MergeSort and O(log n) binary search.</li>
+<li>Considered HashMap use for grouping entries by user while evaluating whether it provides a practical benefit.</li>
+<li>Added date validation so future or inconsistent dates do not produce incorrect trend results.</li>
+        </ul>
+
+        <h2>Course Outcome Connection</h2>
+        <p>This enhancement primarily supports the ability to design and evaluate computing solutions using algorithmic principles while considering trade-offs. MergeSort provides reliable O(n log n) performance but requires O(n) additional memory, while binary search improves searching to O(log n) after the data has been sorted.</p>
+
+        <div class="artifact-box">
+          <h2>Artifact Files</h2>
+          <p>
+            Add your original and enhanced project files to this repository, then replace the links
+            below with the correct GitHub file or folder URLs.
+          </p>
+          <div class="button-row">
+            <a class="button secondary" href="#">Original Artifact</a>
+            <a class="button" href="#">Enhanced Artifact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>CS-499 Computer Science Capstone ePortfolio | Chelsea Cacho</p>
+    </div>
+  </footer>
+</body>
+</html>
