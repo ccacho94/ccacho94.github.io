@@ -6,7 +6,9 @@
   <title>Enhancement One: Software Design & Engineering | Chelsea Cacho</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
   <header class="site-header compact">
     <div class="container">
       <a class="back-link" href="index.html">← Back to ePortfolio</a>
@@ -18,48 +20,185 @@
   <main>
     <section class="section">
       <div class="container narrow">
+
         <h2>Enhancement Overview</h2>
-        <p>For this enhancement, I refactored my Android weight-tracking application to improve its structure and maintainability. The original application placed too much application logic, database access, and UI behavior directly inside Activities. I reorganized the project using MVVM concepts so each part of the application has a clearer responsibility.</p>
+
+        <p>
+          I selected my weight-loss tracking application, which I originally created for my
+          CS-360 Mobile Architecture and Programming course at the beginning of 2026.
+          The Android application allows users to create an account, log their weight,
+          set a target weight, view previous entries, and receive a notification when
+          they reach their goal.
+        </p>
+
+        <p>
+          I selected this artifact because I would eventually like to publish it on the
+          Google Play Store for others to use. Feedback from real users would help me
+          continue improving the application and provide additional real-world software
+          development experience.
+        </p>
 
         <h2>Original Artifact</h2>
-        <p>The original application successfully supported account registration, login, goal management, weight tracking, record deletion, and optional SMS notifications. However, the Activities were tightly connected to database and business logic, which made the application harder to test and maintain.</p>
+
+        <p>
+          The original application demonstrated my proficiency with Java, Android Studio,
+          XML layouts, SQLite databases, user input validation, account management, and
+          goal-tracking logic.
+        </p>
+
+        <p>
+          Before the enhancement, the activity files handled several responsibilities at
+          the same time, including the user interface, input validation, database calls,
+          and application logic. This made the application more difficult to maintain,
+          test, and expand.
+        </p>
+
+        <p>
+          To understand where improvements could be made, I examined the activity files
+          method by method to determine which sections controlled the interface, handled
+          validation, or communicated with the database. This allowed me to understand
+          the dependencies between methods before reorganizing the application.
+        </p>
 
         <h2>Enhancements Completed</h2>
+
         <ul class="enhancement-list">
-          <li>Introduced ViewModel classes to move application logic away from Activities.</li>
-<li>Used LiveData so the user interface can observe weight-entry and trend changes.</li>
-<li>Separated model, view, and application-logic responsibilities.</li>
-<li>Improved the organization of weight-entry deletion and goal-related logic.</li>
-<li>Reduced direct database and business-logic dependencies inside the UI layer.</li>
-<li>Prepared the application for repository-based data access and easier testing.</li>
-<li>Improved validation, error handling, and user-specific data access.</li>
+          <li>
+            Reorganized the application into separate model, view, ViewModel,
+            repository, data, and utility packages.
+          </li>
+
+          <li>
+            Added ViewModel classes, including WeightLogViewModel and LoginViewModel,
+            to handle validation and communication between the user interface and data.
+          </li>
+
+          <li>
+            Added repository classes to separate the ViewModels from DatabaseHelper.
+          </li>
+
+          <li>
+            Reduced the responsibilities of the activity files so they mainly collect
+            user input and update the screen.
+          </li>
+
+          <li>
+            Moved application decisions and validation logic into the ViewModel layer.
+          </li>
+
+          <li>
+            Moved database requests into repository classes.
+          </li>
+
+          <li>
+            Improved separation of concerns throughout the application.
+          </li>
+
+          <li>
+            Created a structure that is easier to maintain, test, debug, and expand
+            with future features.
+          </li>
         </ul>
 
+        <h2>Skills Demonstrated</h2>
+
+        <p>
+          This enhancement demonstrates my ability to analyze existing code and understand
+          how different parts of an application work together. I reorganized the code into
+          smaller and more focused classes while preserving the existing functionality of
+          the application.
+        </p>
+
+        <p>
+          The enhancement also demonstrates my understanding of Java, Android Studio,
+          object-oriented programming, MVVM architecture, repositories, ViewModels,
+          SQLite database communication, input validation, and separation of concerns.
+        </p>
+
         <h2>Course Outcome Connection</h2>
-        <p>This enhancement primarily demonstrates the use of well-founded computing techniques and tools to implement a solution that provides value. It also demonstrates design decision-making by balancing the additional structure of MVVM against improved maintainability, testing, and scalability.</p>
 
-       <div class="artifact-box">
-  <h2>Artifact Files</h2>
-  <p>
-    View the original and enhanced versions of the weight-tracking application on GitHub.
-  </p>
+        <p>
+          This enhancement supports Course Outcome Four because I used well-founded
+          software development techniques and tools to improve the design of my application.
+          Refactoring the application into an MVVM structure allowed me to separate the
+          user interface, application logic, and database operations into more focused layers.
+        </p>
 
-  <div class="button-row">
-    <a class="button secondary"
-       href="https://github.com/ccacho94/ccacho94.github.io/tree/Original-Artifact"
-       target="_blank"
-       rel="noopener noreferrer">
-      Original Artifact
-    </a>
+        <p>
+          This demonstrates my ability to apply an industry-standard design pattern and
+          create a computing solution that is easier to maintain, test, and expand.
+          The improved organization also provides more value because future features can
+          be added without placing additional responsibilities directly inside the activity files.
+        </p>
 
-    <a class="button"
-       href="https://github.com/ccacho94/ccacho94.github.io/tree/enhancement-one"
-       target="_blank"
-       rel="noopener noreferrer">
-      Enhanced Artifact
-    </a>
-  </div>
-</div>
+        <h2>Challenges and Lessons Learned</h2>
+
+        <p>
+          While enhancing the application, I learned that reorganizing existing code requires
+          more than moving files into different folders. Package declarations, imports,
+          activity references, database calls, and method names must all be updated so the
+          classes continue working together.
+        </p>
+
+        <p>
+          One challenge was deciding which code belonged in each layer because some of the
+          original activity files handled several responsibilities. I carefully examined the
+          code, determined how the methods were connected, and decided which parts should
+          remain in the View and which should move into the ViewModel or repository.
+        </p>
+
+        <p>
+          The weight entries are still displayed using a GridLayout. A future improvement
+          will be replacing the GridLayout with a RecyclerView. For this enhancement,
+          I focused first on separating the code and improving the overall application
+          structure using MVVM because the structure needed improvement before additional
+          interface changes were added.
+        </p>
+
+        <p>
+          This process helped me better understand separation of concerns and demonstrated
+          how stronger organization can make testing, debugging, maintenance, and future
+          development easier.
+        </p>
+
+        <h2>Future Improvements</h2>
+
+        <p>
+          I plan to continue improving the application by replacing the GridLayout with a
+          RecyclerView and strengthening security through improved password storage,
+          additional input validation, and stronger error handling.
+        </p>
+
+        <div class="artifact-box">
+
+          <h2>Artifact Files</h2>
+
+          <p>
+            View the original and enhanced versions of the weight-tracking application
+            on GitHub.
+          </p>
+
+          <div class="button-row">
+
+            <a class="button secondary"
+               href="https://github.com/ccacho94/ccacho94.github.io/tree/Original-Artifact"
+               target="_blank"
+               rel="noopener noreferrer">
+              Original Artifact
+            </a>
+
+            <a class="button"
+               href="https://github.com/ccacho94/ccacho94.github.io/tree/enhancement-one"
+               target="_blank"
+               rel="noopener noreferrer">
+              Enhanced Artifact
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
     </section>
   </main>
 
@@ -68,5 +207,6 @@
       <p>CS-499 Computer Science Capstone ePortfolio | Chelsea Cacho</p>
     </div>
   </footer>
+
 </body>
 </html>
