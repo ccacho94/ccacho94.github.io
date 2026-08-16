@@ -6,7 +6,9 @@
   <title>Enhancement Two: Algorithms & Data Structures | Chelsea Cacho</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
   <header class="site-header compact">
     <div class="container">
       <a class="back-link" href="index.html">← Back to ePortfolio</a>
@@ -18,50 +20,207 @@
   <main>
     <section class="section">
       <div class="container narrow">
+
         <h2>Enhancement Overview</h2>
-        <p>For this enhancement, I added a weight-trend feature that analyzes a user's weight history. The enhancement focuses on organizing weight entries by date, comparing the newest records, and applying algorithms and data structures in a practical feature.</p>
+
+        <p>
+          I enhanced my weight-loss tracking application, which I originally created for my
+          CS-360 Mobile Architecture and Programming course at the beginning of 2026.
+          The Android application allows users to create an account, log their weight,
+          set a target weight, view previous entries, and receive a notification when
+          they reach their goal.
+        </p>
+
+        <p>
+          I selected this artifact for my ePortfolio because I plan to publish it on the
+          Google Play Store. Feedback from real users could help me continue improving
+          the application while giving me more real-world software development experience.
+        </p>
 
         <h2>Original Artifact</h2>
-        <p>The original application stored weight entries in an ArrayList and could determine whether a user reached a goal, but it did not analyze changes over time. Entries could also be ordered by entry ID instead of the actual date, which could produce incorrect results when older dates were entered later.</p>
+
+        <p>
+          The original application stored weight records and allowed users to view their
+          history and determine whether they had reached a target weight. However, it did
+          not analyze the user’s weight over time or provide feedback about whether their
+          weight was increasing, decreasing, or staying the same.
+        </p>
+
+        <p>
+          The original application also needed a better way to organize entries by date.
+          Sorting records chronologically is important because the application must compare
+          the correct two most recent entries when calculating a weight trend.
+        </p>
 
         <h2>Enhancements Completed</h2>
+
         <ul class="enhancement-list">
-          <li>Used an ArrayList to store WeightEntry objects for analysis.</li>
-<li>Added MergeSort logic to organize entries chronologically.</li>
-<li>Compared the two most recent entries to identify whether weight is increasing, decreasing, or staying the same.</li>
-<li>Separated trend logic into a dedicated WeightTrendAnalyzer class.</li>
-<li>Applied binary-search concepts for locating entries by date after sorting.</li>
-<li>Evaluated runtime using Big-O notation, including O(n log n) MergeSort and O(log n) binary search.</li>
-<li>Considered HashMap use for grouping entries by user while evaluating whether it provides a practical benefit.</li>
-<li>Added date validation so future or inconsistent dates do not produce incorrect trend results.</li>
+          <li>
+            Added a trend-tracking feature that compares a user’s weight entries over time.
+          </li>
+
+          <li>
+            Retrieved stored weight records from the database and placed them into a list
+            for sorting and analysis.
+          </li>
+
+          <li>
+            Sorted weight entries chronologically using MergeSort.
+          </li>
+
+          <li>
+            Used MergeSort with a runtime of O(n log n) to ensure that the two most recent
+            records are identified in the correct order.
+          </li>
+
+          <li>
+            Used a HashMap with the user ID as the key to organize records and provide
+            an average lookup time of O(1).
+          </li>
+
+          <li>
+            Compared the newest weight entry with the previous entry to determine whether
+            the user's weight is increasing, decreasing, or staying the same.
+          </li>
+
+          <li>
+            Added date validation to help ensure that weight entries are processed in the
+            correct chronological order.
+          </li>
+
+          <li>
+            Connected the database, repository, ViewModel, and activity so the trend
+            information updates when an entry is added or deleted.
+          </li>
         </ul>
 
+        <h2>Skills Demonstrated</h2>
+
+        <p>
+          This enhancement showcases my skills in algorithms and data structures through
+          the way weight records are stored, organized, sorted, and analyzed. Each record
+          contains the user ID, date, and weight value, allowing the application to process
+          the information and provide meaningful feedback to the user.
+        </p>
+
+        <p>
+          The enhancement demonstrates my ability to work with lists, HashMaps, sorting
+          algorithms, comparison logic, conditional statements, date validation, and
+          runtime analysis. Instead of only displaying stored weight information, the
+          application now analyzes the data and helps users better understand their progress.
+        </p>
+
+        <h2>Algorithm Analysis</h2>
+
+        <p>
+          The weight entries are sorted chronologically using MergeSort. MergeSort has a
+          runtime of O(n log n), which provides consistent performance as the number of
+          weight records increases.
+        </p>
+
+        <p>
+          After the records are sorted, the application compares the two newest entries.
+          If the newest weight is higher, the application reports that the user's weight
+          is increasing. If it is lower, the weight is decreasing. If both values are
+          equal, the application reports that the weight is staying the same.
+        </p>
+
+        <p>
+          A HashMap is also used to organize records using the user ID as the key. This
+          provides an average lookup time of O(1) when locating information associated
+          with a specific user.
+        </p>
+
         <h2>Course Outcome Connection</h2>
-        <p>This enhancement primarily supports the ability to design and evaluate computing solutions using algorithmic principles while considering trade-offs. MergeSort provides reliable O(n log n) performance but requires O(n) additional memory, while binary search improves searching to O(log n) after the data has been sorted.</p>
 
-       <div class="artifact-box">
-  <h2>Artifact Files</h2>
-  <p>
-    View the original and enhanced versions of the weight-tracking application on GitHub.
-  </p>
+        <p>
+          I met the course outcomes I planned to support with this enhancement. The main
+          outcome I addressed was designing and evaluating a computing solution using
+          algorithmic principles and computer science practices.
+        </p>
 
-  <div class="button-row">
-    <a class="button secondary"
-       href="https://github.com/ccacho94/ccacho94.github.io/tree/Original-Artifact"
-       target="_blank"
-       rel="noopener noreferrer">
-      Original Artifact
-    </a>
+        <p>
+          I added a trend-tracking feature that stores weight entries in a list, sorts
+          them chronologically using MergeSort, and compares the two most recent records
+          to determine whether the user's weight is increasing, decreasing, or staying
+          the same. I also used a HashMap with the user ID as the key to organize records
+          and improve the efficiency of locating a user's information.
+        </p>
 
-    <a class="button"
-       href="https://github.com/ccacho94/ccacho94.github.io/tree/enhancement-two"
-       target="_blank"
-       rel="noopener noreferrer">
-      Enhanced Artifact
-    </a>
-  </div>
-</div>
-        </section>
+        <p>
+          This enhancement also supports the course outcome focused on using well-founded
+          techniques, skills, and tools to create computing solutions that provide value.
+          The trend feature turns stored weight data into information that is easier for
+          users to understand and use when tracking their progress.
+        </p>
+
+        <h2>Challenges and Lessons Learned</h2>
+
+        <p>
+          While enhancing the application, I learned how algorithms and data structures
+          can turn stored data into useful feedback for the user. I gained more experience
+          working with lists, HashMaps, MergeSort, runtime analysis, date validation, and
+          comparison logic.
+        </p>
+
+        <p>
+          One of the main challenges I faced was deciding whether to create a separate
+          class for the MergeSort algorithm or incorporate the sorting logic into an
+          existing class. A separate class would make the algorithm easier to test and
+          reuse, while adding it to the existing ViewModel would reduce the number of
+          files and keep the enhancement connected to the current application structure.
+        </p>
+
+        <p>
+          I decided to place the sorting logic inside the existing ViewModel while keeping
+          the HashMap inside the repository. This decision helped me better understand the
+          trade-offs between separation of responsibilities, code organization, reusability,
+          and simplicity.
+        </p>
+
+        <p>
+          I also had to make sure that the database, repository, ViewModel, and activity
+          worked together correctly so the trend would update whenever a weight entry was
+          added or deleted.
+        </p>
+
+        <h2>Future Improvements</h2>
+
+        <p>
+          My outcome-coverage plan has not changed. I plan to continue supporting the
+          security outcome during the database enhancement by improving password storage,
+          strengthening input validation, and improving the protection of user data.
+        </p>
+
+        <div class="artifact-box">
+          <h2>Artifact Files</h2>
+
+          <p>
+            View the original and enhanced versions of the weight-tracking application
+            on GitHub.
+          </p>
+
+          <div class="button-row">
+
+            <a class="button secondary"
+               href="https://github.com/ccacho94/ccacho94.github.io/tree/Original-Artifact"
+               target="_blank"
+               rel="noopener noreferrer">
+              Original Artifact
+            </a>
+
+            <a class="button"
+               href="https://github.com/ccacho94/ccacho94.github.io/tree/enhancement-two"
+               target="_blank"
+               rel="noopener noreferrer">
+              Enhanced Artifact
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -69,5 +228,6 @@
       <p>CS-499 Computer Science Capstone ePortfolio | Chelsea Cacho</p>
     </div>
   </footer>
+
 </body>
 </html>
