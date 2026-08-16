@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,9 @@
   <title>Enhancement Three: Databases | Chelsea Cacho</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
   <header class="site-header compact">
     <div class="container">
       <a class="back-link" href="index.html">← Back to ePortfolio</a>
@@ -18,50 +21,223 @@
   <main>
     <section class="section">
       <div class="container narrow">
+
         <h2>Enhancement Overview</h2>
-        <p>For this enhancement, I improved the SQLite database used by the weight-tracking application. The database stores user accounts, goals, and weight entries, so the changes focus on security, reliability, organization, and more efficient access to user data.</p>
+
+        <p>
+          I selected my weight-loss tracking application, which I originally created for my
+          CS-360 Mobile Architecture and Programming course at the beginning of 2026.
+          The Android application allows users to create an account, log their weight,
+          set a target weight, review previous entries, and receive a notification when
+          they reach their goal.
+        </p>
+
+        <p>
+          I chose this artifact because I would eventually like to publish the application
+          on the Google Play Store. Improving the database makes the application more
+          practical for multiple users and gives me experience working with data storage,
+          security, and account-based information.
+        </p>
 
         <h2>Original Artifact</h2>
-        <p>The original database already used separate users, goals, and weight_entries tables, primary keys, unique email addresses, ContentValues, and parameterized selection arguments. However, password storage, relationship enforcement, record ownership, date ordering, and database efficiency could be improved.</p>
+
+        <p>
+          The original application used SQLite to store user accounts and weight entries.
+          It already provided the basic functionality needed to save user information,
+          record weights, and display previous entries. However, the database needed
+          stronger security controls, more efficient searches, and better protection
+          between different user accounts.
+        </p>
+
+        <p>
+          The original database also required improvements to password storage, record
+          ownership, date searching, and database relationships before the application
+          could better support multiple users.
+        </p>
 
         <h2>Enhancements Completed</h2>
+
         <ul class="enhancement-list">
-          <li>Strengthened the relationship between users, goals, and weight entries using foreign-key concepts.</li>
-<li>Improved password protection instead of relying on plain-text password storage.</li>
-<li>Used parameterized queries and user-specific conditions for safer record access.</li>
-<li>Restricted update and delete operations using both the user ID and record ID.</li>
-<li>Standardized dates and improved sorting by entry date.</li>
-<li>Added validation and improved exception handling around database operations.</li>
-<li>Planned indexing on user ID and entry date to improve common searches and sorting.</li>
-<li>Improved database design for record editing, date searching, and more efficient retrieval.</li>
-<li>Considered database migrations instead of destructive upgrades.</li>
+          <li>
+            Used SQLite tables and relationships to organize user accounts and weight entries.
+          </li>
+
+          <li>
+            Linked each weight entry to the correct account using a user ID as a foreign key.
+          </li>
+
+          <li>
+            Filtered database results by the logged-in user ID so users can only access
+            their own weight records.
+          </li>
+
+          <li>
+            Added searchable weight history by allowing users to search for a specific
+            date or an inclusive date range.
+          </li>
+
+          <li>
+            Added the ability to update and delete existing weight entries.
+          </li>
+
+          <li>
+            Added indexes on the user ID and date fields to improve search and sorting efficiency.
+          </li>
+
+          <li>
+            Added foreign-key cascade rules so deleting a user account also removes
+            related weight entries.
+          </li>
+
+          <li>
+            Required both the entry ID and logged-in user ID when updating or deleting
+            database records.
+          </li>
+
+          <li>
+            Used parameterized queries to reduce the risk of SQL injection.
+          </li>
+
+          <li>
+            Replaced plain-text passwords with salted password hashes.
+          </li>
+
+          <li>
+            Improved database versioning and schema updates while considering how to
+            preserve existing user records.
+          </li>
         </ul>
 
+        <h2>Skills Demonstrated</h2>
+
+        <p>
+          This enhancement showcases my database development skills through the use of
+          SQLite tables, relationships, queries, indexes, and security controls. Each
+          weight entry contains a user ID that connects the record to the correct account.
+          When a user logs in, the application retrieves only records associated with
+          that user ID.
+        </p>
+
+        <p>
+          This demonstrates my ability to work with relational database concepts,
+          primary and foreign keys, CRUD operations, date-range searches, indexes,
+          parameterized queries, account-based filtering, cascade deletion, password
+          hashing, and database version upgrades.
+        </p>
+
+        <h2>Database Security and Performance</h2>
+
+        <p>
+          The database was improved by adding indexes on the user ID and date fields.
+          These indexes help SQLite locate user-specific records and date ranges more
+          efficiently.
+        </p>
+
+        <p>
+          Database updates and deletions require both the entry ID and the logged-in
+          user ID. This adds another layer of protection by making sure a record belongs
+          to the correct account before it can be changed or removed.
+        </p>
+
+        <p>
+          Parameterized queries are used instead of directly combining user input with
+          SQL commands. This reduces the risk of SQL injection because user input is
+          treated as data rather than executable SQL.
+        </p>
+
+        <p>
+          Password storage was also improved by replacing plain-text passwords with
+          salted password hashes. This protects account credentials more effectively
+          if stored data is exposed.
+        </p>
+
         <h2>Course Outcome Connection</h2>
-        <p>This enhancement demonstrates database design and security practices through SQLite, relational relationships, CRUD operations, indexing, parameterized queries, and user-specific data access. It also demonstrates a security mindset by protecting stored credentials and limiting access to records that belong to the logged-in user.</p>
+
+        <p>
+          I met the course outcome I planned to support with this enhancement. The main
+          outcome was developing a security mindset that anticipates potential software
+          vulnerabilities, protects user privacy, and improves the security of data
+          and resources.
+        </p>
+
+        <p>
+          Separating records by user account, using parameterized queries, protecting
+          passwords, and limiting database changes to the correct user demonstrate this
+          outcome. These changes reduce the possibility of unauthorized access to another
+          user's information and improve the overall security of the application.
+        </p>
+
+        <p>
+          The enhancement also strengthened my ability to design and evaluate computing
+          solutions because I had to consider database structure, query performance,
+          relationships between data, and the trade-offs involved in modifying an
+          existing database.
+        </p>
+
+        <p>
+          My outcome-coverage plan has not changed because this database enhancement
+          provided strong support for the security outcome I planned to address.
+        </p>
+
+        <h2>Challenges and Lessons Learned</h2>
+
+        <p>
+          While completing this enhancement, I learned more about relational database
+          design and the importance of connecting records through primary and foreign
+          keys. I also learned that database security involves more than protecting
+          the database file. Each query must be designed so users can access only their
+          own information.
+        </p>
+
+        <p>
+          One challenge I faced was modifying the existing database without breaking
+          the application's other features. I had to make sure the DatabaseHelper,
+          repositories, ViewModel, and activity all used matching method parameters.
+        </p>
+
+        <p>
+          Another challenge was handling dates. The application displays dates using
+          the MM/DD/YYYY format, but it stores a second date value using the YYYY-MM-DD
+          format so SQLite can correctly sort and search date values.
+        </p>
+
+        <p>
+          I also had to decide how to update the existing database schema while preserving
+          older user records. Working through these challenges improved my ability to
+          review existing code, plan database changes, troubleshoot connections between
+          application layers, and create a more secure and useful application.
+        </p>
 
         <div class="artifact-box">
-  <h2>Artifact Files</h2>
-  <p>
-    View the original and enhanced versions of the weight-tracking application on GitHub.
-  </p>
 
-  <div class="button-row">
-    <a class="button secondary"
-       href="https://github.com/ccacho94/ccacho94.github.io/tree/Original-Artifact"
-       target="_blank"
-       rel="noopener noreferrer">
-      Original Artifact
-    </a>
+          <h2>Artifact Files</h2>
 
-    <a class="button"
-       href="https://github.com/ccacho94/ccacho94.github.io/tree/enhancement-three"
-       target="_blank"
-       rel="noopener noreferrer">
-      Enhanced Artifact
-    </a>
-  </div>
-</div>
+          <p>
+            View the original and enhanced versions of the weight-tracking application
+            on GitHub.
+          </p>
+
+          <div class="button-row">
+
+            <a class="button secondary"
+               href="https://github.com/ccacho94/ccacho94.github.io/tree/Original-Artifact"
+               target="_blank"
+               rel="noopener noreferrer">
+              Original Artifact
+            </a>
+
+            <a class="button"
+               href="https://github.com/ccacho94/ccacho94.github.io/tree/enhancement-three"
+               target="_blank"
+               rel="noopener noreferrer">
+              Enhanced Artifact
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
     </section>
   </main>
 
@@ -70,5 +246,7 @@
       <p>CS-499 Computer Science Capstone ePortfolio | Chelsea Cacho</p>
     </div>
   </footer>
+
 </body>
 </html>
+```
